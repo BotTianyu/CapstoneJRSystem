@@ -8,6 +8,7 @@ var provider = builder.Services.BuildServiceProvider();
 var configuration = provider.GetRequiredService<IConfiguration>();
 builder.Services.AddDbContext<ReferralDBContext>(item => item.UseSqlServer(configuration.GetConnectionString("ReferralConnection")));
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

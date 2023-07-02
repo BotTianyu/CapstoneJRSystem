@@ -55,7 +55,7 @@ namespace JRSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReferralId,ReferralName,ReferralDate,deadline,JobTitle")] Referral referral)
+        public async Task<IActionResult> Create([Bind("ReferralId,ReferralName,AccountID,ReferralDate,deadline,JobTitle")] Referral referral)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace JRSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("ReferralId,ReferralName,ReferralDate,deadline,JobTitle")] Referral referral)
+        public async Task<IActionResult> Edit(string id, [Bind("ReferralId,ReferralName,AccountID,ReferralDate,deadline,JobTitle")] Referral referral)
         {
             if (id != referral.ReferralId)
             {

@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Find the Referral you want! ;)</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -14,6 +14,9 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.ReferralName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountID)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ReferralDate)
@@ -32,6 +35,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ReferralName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ReferralDate)

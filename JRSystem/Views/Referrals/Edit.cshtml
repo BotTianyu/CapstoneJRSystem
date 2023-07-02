@@ -19,6 +19,11 @@
                 <span asp-validation-for="ReferralName" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="AccountID" class="control-label"></label>
+                <input asp-for="AccountID" class="form-control" />
+                <span asp-validation-for="AccountID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="ReferralDate" class="control-label"></label>
                 <input asp-for="ReferralDate" class="form-control" />
                 <span asp-validation-for="ReferralDate" class="text-danger"></span>
@@ -44,6 +49,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

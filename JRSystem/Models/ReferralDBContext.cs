@@ -9,7 +9,10 @@ namespace JRSystem.Models
 
         }
         public DbSet<Referral> ReferralSets { get; set; }
-        
-        
+
+        public DbSet<Account> AccountSets { get; set; }
+
+
+
     }
 }
