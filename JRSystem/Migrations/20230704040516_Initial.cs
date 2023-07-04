@@ -15,7 +15,8 @@ namespace JRSystem.Migrations
                 name: "AccountSets",
                 columns: table => new
                 {
-                    AccountId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    AccountId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SetupTime = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -31,7 +32,7 @@ namespace JRSystem.Migrations
                 {
                     ReferralId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ReferralName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AccountID = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    AccountID = table.Column<int>(type: "int", nullable: false),
                     ReferralDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     deadline = table.Column<DateTime>(type: "datetime2", nullable: false),
                     JobTitle = table.Column<string>(type: "nvarchar(max)", nullable: false)

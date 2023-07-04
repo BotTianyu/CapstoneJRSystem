@@ -4,7 +4,7 @@ namespace JRSystem.Models
 {
     public class Account
     {
-        public string AccountId { get; set; }
+        public int AccountId { get; set; }
         public string UserName { get; set; }
         public DateTime? SetupTime { get; set; }
         public string Password { get; set; }

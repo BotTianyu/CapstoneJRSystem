@@ -27,7 +27,7 @@ namespace JRSystem.Controllers
         }
 
         // GET: Accounts/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.AccountSets == null)
             {
@@ -67,7 +67,7 @@ namespace JRSystem.Controllers
         }
 
         // GET: Accounts/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.AccountSets == null)
             {
@@ -87,7 +87,7 @@ namespace JRSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("AccountId,UserName,SetupTime,Password")] Account account)
+        public async Task<IActionResult> Edit(int id, [Bind("AccountId,UserName,SetupTime,Password")] Account account)
         {
             if (id != account.AccountId)
             {
@@ -118,7 +118,7 @@ namespace JRSystem.Controllers
         }
 
         // GET: Accounts/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.AccountSets == null)
             {
@@ -138,7 +138,7 @@ namespace JRSystem.Controllers
         // POST: Accounts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.AccountSets == null)
             {
@@ -153,15 +153,6 @@ namespace JRSystem.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
-
-        public IActionResult Print()
-        {
-
-
-            return View();
-        }
-
         public IActionResult Fail()
         {
             Account account = new Account(_context);
@@ -179,11 +170,20 @@ namespace JRSystem.Controllers
         [HttpPost]
         public IActionResult Login(Account model)
         {
-                Account account = new Account(_context);
-                Dictionary<string, string> dataList = account.ExportToDictionary();
+            Account account = new Account(_context);
+            Dictionary<string, string> dataList = account.ExportToDictionary();
             if (model.Password == dataList[model.UserName])
             {
-                return RedirectToAction("Print");
+
+                var loggedInAccount = _context.AccountSets.FirstOrDefault(a => a.UserName == model.UserName);
+
+                if (loggedInAccount != null)
+                {
+                    int accountId = loggedInAccount.AccountId; // 获取 AccountID
+
+                    return RedirectToAction("Index", "Referrals", new { id = accountId });
+                }
+                return RedirectToAction("Index", "Referrals");
             }
             else
             {
@@ -192,19 +192,12 @@ namespace JRSystem.Controllers
 
 
             return RedirectToAction("Fail");
-            
+
         }
 
-
-
-  
-
-        private bool AccountExists(string id)
+        private bool AccountExists(int id)
         {
           return (_context.AccountSets?.Any(e => e.AccountId == id)).GetValueOrDefault();
         }
     }
 }
-
-
-
