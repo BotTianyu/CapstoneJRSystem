@@ -19,9 +19,10 @@ namespace JRSystem.Controllers
         }
 
         // GET: Referrals
-        public async Task<IActionResult> Index(int id = 0)
+        public async Task<IActionResult> Index()
         {
-              return _context.ReferralSets != null ?
+            var id = HttpContext.Session.GetInt32("_AccountID");
+            return _context.ReferralSets != null ?
                           View(new { ReferralList = await _context.ReferralSets.ToListAsync(), Id = id }):
                           Problem("Entity set 'ReferralDBContext.ReferralSets'  is null.");
         }

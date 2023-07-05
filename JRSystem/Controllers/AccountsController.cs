@@ -174,14 +174,17 @@ namespace JRSystem.Controllers
             Dictionary<string, string> dataList = account.ExportToDictionary();
             if (model.Password == dataList[model.UserName])
             {
-
+                
+                
+                
                 var loggedInAccount = _context.AccountSets.FirstOrDefault(a => a.UserName == model.UserName);
 
                 if (loggedInAccount != null)
                 {
-                    int accountId = loggedInAccount.AccountId; // 获取 AccountID
+                    int accountId = loggedInAccount.AccountId;
+                    HttpContext.Session.SetInt32("_AccountID", accountId);
 
-                    return RedirectToAction("Index", "Referrals", new { id = accountId });
+                    return RedirectToAction("Index", "Referrals"/*, new { id = accountId }*/);
                 }
                 return RedirectToAction("Index", "Referrals");
             }
