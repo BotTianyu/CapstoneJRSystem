@@ -23,9 +23,10 @@
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Are you tired of constantly casting a wide net and applying for jobs? Let the efficient use of alumni referrals help you. Just provide the necessary information, and after a review and selection process, you can gain access to referral opportunities!</p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Post a Referral</button>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Find a Referral</button>
-        </div>
+            <a class="btn btn-primary btn-lg px-4 me-sm-3" asp-controller="Referrals" asp-action="Create">Post a Referral</a>
+            <a class="btn btn-outline-secondary btn-lg px-4" asp-controller="Referrals" asp-action="Index">Find a Referral</a>
+@*            <button type="button" class="btn btn-outline-secondary btn-lg px-4">Find a Referral</button>
+*@        </div>
     </div>
     <div class="overflow-hidden" style="max-height: 30vh;">
         <div class="container px-5">

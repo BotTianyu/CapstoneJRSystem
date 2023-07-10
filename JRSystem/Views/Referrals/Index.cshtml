@@ -1,6 +1,7 @@
-﻿@model IEnumerable<JRSystem.Models.Referral>
+﻿@model dynamic
 
-@{
+
+@*@{
     ViewData["Title"] = "Index";
 }
 
@@ -13,25 +14,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ReferralName)
+                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().ReferralName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AccountID)
+                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().AccountID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ReferralDate)
+                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().ReferralDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.deadline)
+                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().deadline)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.JobTitle)
+                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().JobTitle)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Item1) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ReferralName)
@@ -49,11 +50,77 @@
                 @Html.DisplayFor(modelItem => item.JobTitle)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ReferralId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ReferralId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReferralId">Delete</a>
+                    @if (item.AccountID == Model.Item2)
+                    {
+                    <a asp-action="Edit" asp-route-id="@item.ReferralId">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.ReferralId">Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.ReferralId">Delete</a>
+                    }
             </td>
         </tr>
 }
+    </tbody>
+</table>
+*@
+
+@{
+    ViewData["Title"] = "Index";
+    var referralList = Model.ReferralList as IEnumerable<JRSystem.Models.Referral>;
+    var id = Model.Id;
+}
+
+<h1>Referrals</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => referralList.FirstOrDefault().ReferralName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => referralList.FirstOrDefault().AccountID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => referralList.FirstOrDefault().ReferralDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => referralList.FirstOrDefault().deadline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => referralList.FirstOrDefault().JobTitle)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in referralList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReferralName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReferralDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.deadline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobTitle)
+                </td>
+                <td>
+                    @if (item.AccountID == id)
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.ReferralId">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.ReferralId">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.ReferralId">Delete</a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

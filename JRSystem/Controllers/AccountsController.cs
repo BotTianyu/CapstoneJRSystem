@@ -27,7 +27,7 @@ namespace JRSystem.Controllers
         }
 
         // GET: Accounts/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.AccountSets == null)
             {
@@ -67,7 +67,7 @@ namespace JRSystem.Controllers
         }
 
         // GET: Accounts/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.AccountSets == null)
             {
@@ -87,7 +87,7 @@ namespace JRSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("AccountId,UserName,SetupTime,Password")] Account account)
+        public async Task<IActionResult> Edit(int id, [Bind("AccountId,UserName,SetupTime,Password")] Account account)
         {
             if (id != account.AccountId)
             {
@@ -118,7 +118,7 @@ namespace JRSystem.Controllers
         }
 
         // GET: Accounts/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.AccountSets == null)
             {
@@ -138,7 +138,7 @@ namespace JRSystem.Controllers
         // POST: Accounts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.AccountSets == null)
             {
@@ -153,19 +153,16 @@ namespace JRSystem.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
-
-        public IActionResult Print()
+        public IActionResult Fail()
         {
-
+            Account account = new Account(_context);
+            Dictionary<string, string> dataList = account.ExportToDictionary();
 
             return View();
         }
 
-        public IActionResult Fail()
+        public IActionResult Login()
         {
-
-
             return View();
         }
 
@@ -173,73 +170,29 @@ namespace JRSystem.Controllers
         [HttpPost]
         public IActionResult Login(Account model)
         {
-            // 在这里进行对填入信息的判断
-            if (ModelState.IsValid)
+            Account account = new Account(_context);
+            Dictionary<string, string> dataList = account.ExportToDictionary();
+            if (model.Password == dataList[model.UserName])
             {
-                // 执行相应的逻辑，保存信息等
-                // 你可以在这里调用其他控制器的方法，传递填入的信息等
-                // 例如，可以调用UserController的方法来处理用户信息
-
-                Account account = new Account(_context);
-                Dictionary<string, string> dataList = account.ExportToDictionary();
-                if(model.Password == dataList[model.UserName])
+                var loggedInAccount = _context.AccountSets.FirstOrDefault(a => a.UserName == model.UserName);
+                if (loggedInAccount != null)
                 {
-                    return RedirectToAction("Print");
+                    int accountId = loggedInAccount.AccountId;
+                    HttpContext.Session.SetInt32("_AccountID", accountId);
+                    HttpContext.Session.SetInt32("_Login", 1);
+                    return RedirectToAction("Index", "Referrals"/*, new { id = accountId }*/);
                 }
-                else
-                {
-                    return RedirectToAction("Fail");
-                }
-
-                //var userInfo = _userController.ProcessUserInfo(model.UserName, model.Password);
-                // 其他逻辑操作
-                // 重定向到成功页面或其他操作
+                return RedirectToAction("Index", "Referrals");
             }
             else
             {
-                // 如果填入的信息不合法，返回表单视图，以便用户重新填写
-                //return View(model);
                 return RedirectToAction("Fail");
             }
+            //return RedirectToAction("Fail");
         }
-
-
-
-        //public IActionResult Login(Account model)
-        //{
-        //    // 在这里进行对填入信息的判断
-        //    if (ModelState.IsValid)
-        //    {
-        //        // 执行相应的逻辑，保存信息等
-        //        bool isValidCredentials = _userService.ValidateCredentials(model.UserName, model.Password);
-        //        if (isValidCredentials)
-        //        {
-        //            // 验证成功，保存userID到Session或其他适当的地方
-        //            int userId = _userService.GetUserIdByUsername(model.UserName);
-        //            HttpContext.Session.SetInt32("UserId", userId);
-
-        //            return RedirectToAction("Success"); // 重定向到成功页面或其他操作
-        //        }
-        //        else
-        //        {
-        //            // 验证失败，返回错误消息或视图
-        //            ModelState.AddModelError(string.Empty, "Invalid username or password");
-        //            return View(model);
-        //        }
-        //    }
-        //    else
-        //    {
-        //        // 如果填入的信息不合法，返回表单视图，以便用户重新填写
-        //        return View(model);
-        //    }
-        //}
-
-        private bool AccountExists(string id)
+        private bool AccountExists(int id)
         {
           return (_context.AccountSets?.Any(e => e.AccountId == id)).GetValueOrDefault();
         }
     }
 }
-
-
-

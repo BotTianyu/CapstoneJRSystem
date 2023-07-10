@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JRSystem.Migrations
 {
     [DbContext(typeof(ReferralDBContext))]
-    [Migration("20230702210859_Initial")]
+    [Migration("20230704040516_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -27,8 +27,11 @@ namespace JRSystem.Migrations
 
             modelBuilder.Entity("JRSystem.Models.Account", b =>
                 {
-                    b.Property<string>("AccountId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("AccountId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountId"));
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -51,9 +54,8 @@ namespace JRSystem.Migrations
                     b.Property<string>("ReferralId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AccountID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("AccountID")
+                        .HasColumnType("int");
 
                     b.Property<string>("JobTitle")
                         .IsRequired()

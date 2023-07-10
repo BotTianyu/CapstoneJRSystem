@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,17 +11,28 @@
     <link rel="stylesheet" href="~/JRSystem.styles.css" asp-append-version="true" />
 </head>
 <body>
+
+
     <nav class="py-2 bg-body-tertiary border-bottom">
         <div class="container d-flex flex-wrap">
             <ul class="nav me-auto">
                 <li class="nav-item"><a class="nav-link link-body-emphasis px-2 active" asp-controller="Home" asp-action="Index">Home</a></li>
                 <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Referrals" asp-action="Index">Find</a></li>
-                <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Post</a></li>
+                <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Referrals" asp-action="Create">Post</a></li>
                 <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Home" asp-action="Privacy">About</a></li>
                 <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Accounts" asp-action="Index">Account</a></li>
             </ul>
             <ul class="nav">
-                <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Home" asp-action="Login">Login</a></li>
+             @*   @if ( string(@ViewData["LoginValue"])=="1")
+                {
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Home" asp-action="Index">Application</a></li>
+                }*@
+                @*else
+                {
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Accounts" asp-action="Login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Home" asp-action="SignIn">Sign up</a></li>
+                }*@
+                <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Accounts" asp-action="Login">Login</a></li>
                 <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Home" asp-action="SignIn">Sign up</a></li>
             </ul>
         </div>
@@ -66,12 +79,8 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - JRSystem
+            &copy; 2023 - JRSystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-        <div class="float-right">
-            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
