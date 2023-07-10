@@ -31,6 +31,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Fail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRmFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -69,6 +73,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Conestoga/.Net/JRSystem/JRSystem/Views/Referrals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Referrals/pleaseLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxzXHBsZWFzZUxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Conestoga/.Net/JRSystem/JRSystem/Views/Shared/Error.cshtml]

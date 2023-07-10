@@ -174,16 +174,12 @@ namespace JRSystem.Controllers
             Dictionary<string, string> dataList = account.ExportToDictionary();
             if (model.Password == dataList[model.UserName])
             {
-                
-                
-                
                 var loggedInAccount = _context.AccountSets.FirstOrDefault(a => a.UserName == model.UserName);
-
                 if (loggedInAccount != null)
                 {
                     int accountId = loggedInAccount.AccountId;
                     HttpContext.Session.SetInt32("_AccountID", accountId);
-
+                    HttpContext.Session.SetInt32("_Login", 1);
                     return RedirectToAction("Index", "Referrals"/*, new { id = accountId }*/);
                 }
                 return RedirectToAction("Index", "Referrals");
@@ -192,12 +188,8 @@ namespace JRSystem.Controllers
             {
                 return RedirectToAction("Fail");
             }
-
-
-            return RedirectToAction("Fail");
-
+            //return RedirectToAction("Fail");
         }
-
         private bool AccountExists(int id)
         {
           return (_context.AccountSets?.Any(e => e.AccountId == id)).GetValueOrDefault();

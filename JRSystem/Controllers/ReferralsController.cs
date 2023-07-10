@@ -22,6 +22,7 @@ namespace JRSystem.Controllers
         public async Task<IActionResult> Index()
         {
             var id = HttpContext.Session.GetInt32("_AccountID");
+            ViewData["LoginValue"] = HttpContext.Session.GetInt32("_Login");
             return _context.ReferralSets != null ?
                           View(new { ReferralList = await _context.ReferralSets.ToListAsync(), Id = id }):
                           Problem("Entity set 'ReferralDBContext.ReferralSets'  is null.");
@@ -48,6 +49,12 @@ namespace JRSystem.Controllers
         // GET: Referrals/Create
         public IActionResult Create()
         {
+            int? flag = HttpContext.Session.GetInt32("_Login");
+            //Console.WriteLine(flag);
+            if(flag!= 1)
+            {
+                RedirectToAction("pleaseLogin");
+            }
             return View();
         }
 

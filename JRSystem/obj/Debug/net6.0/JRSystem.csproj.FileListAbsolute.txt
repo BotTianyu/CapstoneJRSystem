@@ -260,3 +260,4 @@ D:\Conestoga\.Net\JRSystem\JRSystem\bin\Debug\net6.0\vi\Humanizer.resources.dll
 D:\Conestoga\.Net\JRSystem\JRSystem\bin\Debug\net6.0\zh-CN\Humanizer.resources.dll
 D:\Conestoga\.Net\JRSystem\JRSystem\bin\Debug\net6.0\zh-Hans\Humanizer.resources.dll
 D:\Conestoga\.Net\JRSystem\JRSystem\bin\Debug\net6.0\zh-Hant\Humanizer.resources.dll
+D:\Conestoga\.Net\JRSystem\JRSystem\bin\Debug\net6.0\Castle.Core.dll
