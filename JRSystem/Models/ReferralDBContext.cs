@@ -12,7 +12,7 @@ namespace JRSystem.Models
 
         public DbSet<Account> AccountSets { get; set; }
 
-
+        public DbSet<Application> ApplicationSets { get; set; }
 
     }
 }

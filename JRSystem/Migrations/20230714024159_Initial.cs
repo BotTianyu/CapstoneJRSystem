@@ -27,6 +27,21 @@ namespace JRSystem.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ApplicationSets",
+                columns: table => new
+                {
+                    ApplicationId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Summary = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApplierId = table.Column<int>(type: "int", nullable: false),
+                    ReferralId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ApplicationSets", x => x.ApplicationId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ReferralSets",
                 columns: table => new
                 {
@@ -48,6 +63,9 @@ namespace JRSystem.Migrations
         {
             migrationBuilder.DropTable(
                 name: "AccountSets");
+
+            migrationBuilder.DropTable(
+                name: "ApplicationSets");
 
             migrationBuilder.DropTable(
                 name: "ReferralSets");

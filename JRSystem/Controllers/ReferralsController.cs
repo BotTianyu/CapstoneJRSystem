@@ -22,7 +22,7 @@ namespace JRSystem.Controllers
         public async Task<IActionResult> Index()
         {
             var id = HttpContext.Session.GetInt32("_AccountID");
-            ViewData["LoginValue"] = HttpContext.Session.GetInt32("_Login");
+           
             return _context.ReferralSets != null ?
                           View(new { ReferralList = await _context.ReferralSets.ToListAsync(), Id = id }):
                           Problem("Entity set 'ReferralDBContext.ReferralSets'  is null.");
@@ -31,6 +31,7 @@ namespace JRSystem.Controllers
         // GET: Referrals/Details/5
         public async Task<IActionResult> Details(string id)
         {
+
             if (id == null || _context.ReferralSets == null)
             {
                 return NotFound();
@@ -47,15 +48,23 @@ namespace JRSystem.Controllers
         }
 
         // GET: Referrals/Create
+
+        public IActionResult pleaseLogin()
+        {
+            return View();
+        }
         public IActionResult Create()
         {
-            int? flag = HttpContext.Session.GetInt32("_Login");
-            //Console.WriteLine(flag);
-            if(flag!= 1)
+            int flag = HttpContext.Session.GetInt32("_Login") ?? 0;
+            if (flag!= 1)
             {
-                RedirectToAction("pleaseLogin");
+                return RedirectToAction("pleaseLogin");
             }
-            return View();
+            else
+            {
+                return View();
+            }
+            
         }
 
         // POST: Referrals/Create
@@ -65,8 +74,10 @@ namespace JRSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ReferralId,ReferralName,AccountID,ReferralDate,deadline,JobTitle")] Referral referral)
         {
+
             if (ModelState.IsValid)
             {
+                referral.AccountID = HttpContext.Session.GetInt32("_AccountID") ?? 0;
                 _context.Add(referral);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -77,6 +88,7 @@ namespace JRSystem.Controllers
         // GET: Referrals/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
+
             if (id == null || _context.ReferralSets == null)
             {
                 return NotFound();
@@ -97,6 +109,7 @@ namespace JRSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("ReferralId,ReferralName,AccountID,ReferralDate,deadline,JobTitle")] Referral referral)
         {
+
             if (id != referral.ReferralId)
             {
                 return NotFound();
@@ -128,6 +141,7 @@ namespace JRSystem.Controllers
         // GET: Referrals/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
+
             if (id == null || _context.ReferralSets == null)
             {
                 return NotFound();
@@ -148,6 +162,7 @@ namespace JRSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
+
             if (_context.ReferralSets == null)
             {
                 return Problem("Entity set 'ReferralDBContext.ReferralSets'  is null.");
@@ -164,7 +179,8 @@ namespace JRSystem.Controllers
 
         private bool ReferralExists(string id)
         {
-          return (_context.ReferralSets?.Any(e => e.ReferralId == id)).GetValueOrDefault();
+
+            return (_context.ReferralSets?.Any(e => e.ReferralId == id)).GetValueOrDefault();
         }
     }
 }

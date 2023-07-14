@@ -180,15 +180,36 @@ namespace JRSystem.Controllers
                     int accountId = loggedInAccount.AccountId;
                     HttpContext.Session.SetInt32("_AccountID", accountId);
                     HttpContext.Session.SetInt32("_Login", 1);
+                    HttpContext.Session.SetString("_Uname", loggedInAccount.UserName);
+
                     return RedirectToAction("Index", "Referrals"/*, new { id = accountId }*/);
                 }
-                return RedirectToAction("Index", "Referrals");
+                return RedirectToAction("Fail");
             }
             else
             {
                 return RedirectToAction("Fail");
             }
             //return RedirectToAction("Fail");
+        }
+
+        
+        public IActionResult Logout()
+        {
+            
+          HttpContext.Session.SetInt32("_AccountID", 0);
+          HttpContext.Session.SetInt32("_Login", 0);
+            //return RedirectToAction("Index", "Referrals");
+            return View();
+        }
+
+        public async Task<IActionResult> AccountInfo()
+        {
+            var id = HttpContext.Session.GetInt32("_AccountID");
+
+            return _context.ReferralSets != null ?
+                          View(new { ReferralList = await _context.ReferralSets.ToListAsync(), Id = id }) :
+                          Problem("Entity set 'ReferralDBContext.ReferralSets'  is null.");
         }
         private bool AccountExists(int id)
         {

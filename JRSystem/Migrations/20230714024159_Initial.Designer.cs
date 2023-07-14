@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JRSystem.Migrations
 {
     [DbContext(typeof(ReferralDBContext))]
-    [Migration("20230704040516_Initial")]
+    [Migration("20230714024159_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -47,6 +47,30 @@ namespace JRSystem.Migrations
                     b.HasKey("AccountId");
 
                     b.ToTable("AccountSets");
+                });
+
+            modelBuilder.Entity("JRSystem.Models.Application", b =>
+                {
+                    b.Property<int>("ApplicationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ApplicationId"));
+
+                    b.Property<int>("ApplierId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ReferralId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Summary")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ApplicationId");
+
+                    b.ToTable("ApplicationSets");
                 });
 
             modelBuilder.Entity("JRSystem.Models.Referral", b =>

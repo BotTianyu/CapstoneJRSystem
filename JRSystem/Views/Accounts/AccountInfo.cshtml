@@ -54,7 +54,7 @@
                     @if (item.AccountID == Model.Item2)
                     {
                     <a asp-action="Edit" asp-route-id="@item.ReferralId">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.ReferralId">Details</a> 
+                    <a asp-action="Details" asp-route-id="@item.ReferralId">Details</a>
                     <a asp-action="Delete" asp-route-id="@item.ReferralId">Delete</a>
                     }
             </td>
@@ -65,12 +65,11 @@
 *@
 
 @{
-    ViewData["Title"] = "Index";
     var referralList = Model.ReferralList as IEnumerable<JRSystem.Models.Referral>;
     var id = Model.Id;
 }
 
-<h1>Referrals</h1>
+<h1>My Referrals</h1>
 
 
 <table class="table">
@@ -97,7 +96,8 @@
     <tbody>
         @foreach (var item in referralList)
         {
-            
+            if (item.AccountID == Context.Session.GetInt32("_AccountID"))
+            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.ReferralName)
@@ -124,8 +124,8 @@
                 }*@
                     </td>
                 </tr>
-            
-            
+            }
+
         }
     </tbody>
 </table>
