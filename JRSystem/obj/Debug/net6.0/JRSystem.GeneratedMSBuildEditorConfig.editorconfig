@@ -5,124 +5,125 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = JRSystem
 build_property.RootNamespace = JRSystem
-build_property.ProjectDir = D:\Conestoga\.Net\JRSystem\JRSystem\
+build_property.ProjectDir = C:\Users\Alina\source\repos\CapstoneJRSystem_1\JRSystem\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Conestoga\.Net\JRSystem\JRSystem
+build_property.MSBuildProjectDirectory = C:\Users\Alina\source\repos\CapstoneJRSystem_1\JRSystem
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/AccountInfo.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Accounts/AccountInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQWNjb3VudEluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Create.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Accounts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Delete.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Accounts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Details.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Accounts/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Edit.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Accounts/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Fail.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Accounts/Fail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRmFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Index.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Accounts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Login.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Accounts/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Accounts/Logout.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Accounts/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9nb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Applications/Create.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Applications/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Applications/Delete.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Applications/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Applications/Details.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Applications/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Applications/Edit.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Applications/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Applications/Index.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Applications/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwbGljYXRpb25zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Home/Index.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Home/SignIn.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Home/SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWduSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Referrals/Create.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Referrals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Referrals/Delete.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Referrals/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Referrals/Details.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Referrals/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Referrals/Edit.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Referrals/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Referrals/Index.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Referrals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Referrals/pleaseLogin.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Referrals/pleaseLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVmZXJyYWxzXHBsZWFzZUxvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Shared/Error.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/_ViewImports.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/_ViewStart.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Conestoga/.Net/JRSystem/JRSystem/Views/Shared/_Layout.cshtml]
+[C:/Users/Alina/source/repos/CapstoneJRSystem_1/JRSystem/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5oxp3uprlj

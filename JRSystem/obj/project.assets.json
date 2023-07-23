@@ -11675,23 +11675,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TianyuDai\\.nuget\\packages\\": {},
+    "C:\\Users\\Alina\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Conestoga\\.Net\\JRSystem\\JRSystem\\JRSystem.csproj",
+      "projectUniqueName": "C:\\Users\\Alina\\Source\\Repos\\CapstoneJRSystem_1\\JRSystem\\JRSystem.csproj",
       "projectName": "JRSystem",
-      "projectPath": "D:\\Conestoga\\.Net\\JRSystem\\JRSystem\\JRSystem.csproj",
-      "packagesPath": "C:\\Users\\TianyuDai\\.nuget\\packages\\",
-      "outputPath": "D:\\Conestoga\\.Net\\JRSystem\\JRSystem\\obj\\",
+      "projectPath": "C:\\Users\\Alina\\Source\\Repos\\CapstoneJRSystem_1\\JRSystem\\JRSystem.csproj",
+      "packagesPath": "C:\\Users\\Alina\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alina\\Source\\Repos\\CapstoneJRSystem_1\\JRSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\TianyuDai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alina\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -11700,6 +11700,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "D:\\Alina\\Conestoga College\\CAD\\PROG8550-MWT\\Week 10\\MSClassLibrary - Week 101\\MSClassLibrary - Week 10\\MSClassLibrary - Custom Annotation - Self Validating Model\\MSClassLibrary\\MSClassLibrary\\bin\\Debug": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11766,7 +11768,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
