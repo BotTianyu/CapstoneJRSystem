@@ -1,12 +1,12 @@
 ﻿@model JRSystem.Models.Application
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Apply A Referral";
 }
 
-<h1>Create</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4>Application</h4>
+@*<h4>Application</h4>*@
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -22,19 +22,19 @@
                 <input asp-for="ApplierId" class="form-control" />
                 <span asp-validation-for="ApplierId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" > 
                 <label asp-for="ReferralId" class="control-label"></label>
                 <input asp-for="ReferralId" class="form-control" />
                 <span asp-validation-for="ReferralId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group" style="margin-top: 20px">
+                <input type="submit" value="Apply" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div style="margin-top: 10px">
+    <a asp-action="Index">Back to Applications Lists</a>
 </div>
 

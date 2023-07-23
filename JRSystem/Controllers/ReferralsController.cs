@@ -58,7 +58,7 @@ namespace JRSystem.Controllers
             int flag = HttpContext.Session.GetInt32("_Login") ?? 0;
             if (flag!= 1)
             {
-                return RedirectToAction("pleaseLogin");
+                return RedirectToAction("Login", "Accounts");
             }
             else
             {

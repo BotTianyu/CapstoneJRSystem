@@ -75,47 +75,49 @@
 
 <table class="table">
     <thead>
-        <tr>
+        <tr class="text-center">
             <th>
                 @Html.DisplayNameFor(model => referralList.FirstOrDefault().ReferralName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => referralList.FirstOrDefault().AccountID)
+                @Html.DisplayNameFor(model => referralList.FirstOrDefault().JobTitle)
             </th>
+            @*<th>
+                @Html.DisplayNameFor(model => referralList.FirstOrDefault().AccountID)
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => referralList.FirstOrDefault().ReferralDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => referralList.FirstOrDefault().deadline)
+               Deadline
             </th>
-            <th>
-                @Html.DisplayNameFor(model => referralList.FirstOrDefault().JobTitle)
-            </th>
-            <th></th>
+           
+            <th>Apply</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in referralList)
         {
             
-                <tr>
+                <tr class="text-center">
                     <td>
                         @Html.DisplayFor(modelItem => item.ReferralName)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.AccountID)
+                        @Html.DisplayFor(modelItem => item.JobTitle)
                     </td>
+                   @* <td>
+                        @Html.DisplayFor(modelItem => item.AccountID)
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.ReferralDate)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.deadline)
                     </td>
+                 
                     <td>
-                        @Html.DisplayFor(modelItem => item.JobTitle)
-                    </td>
-                    <td>
-                        <a asp-controller="Applications" asp-action="Create" asp-route-id="@item.ReferralId">Apply now!</a>
+                            <a asp-controller="Applications" asp-action="Create" asp-route-id="@item.ReferralId" class="btn btn-primary">Apply now!</a>
                         @*@if (item.AccountID == id)
                 {
                 <a asp-action="Edit" asp-route-id="@item.ReferralId">Edit</a>
