@@ -47,7 +47,15 @@ namespace JRSystem.Controllers
         // GET: Applications/Create
         public IActionResult Create(string id)
         {
-            return View();
+            int flag = HttpContext.Session.GetInt32("_Login") ?? 0;
+            if (flag != 1)
+            {
+                return RedirectToAction("pleaseLogin","Referrals");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         // POST: Applications/Create

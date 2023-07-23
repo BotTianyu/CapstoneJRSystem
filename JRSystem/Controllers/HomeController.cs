@@ -1,6 +1,8 @@
 ﻿using JRSystem.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.IO;
+using System.Web;
 
 namespace JRSystem.Controllers
 {
@@ -30,7 +32,8 @@ namespace JRSystem.Controllers
             return View();
         }
 
-       
+        
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

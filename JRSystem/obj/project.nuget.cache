@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YnQww9mykazMvlcste2s/wA9FwVj7chO+KRVqKeyaUy5tu4+Gdp6O5lreZirDVrbE+yWFoRu8mf5XlN035YpwA==",
+  "dgSpecHash": "IPV5mUkOq3KMeDBU1H0NeejCNtF+zaSKUFRMLWTndUHQsq7EPnb9xmsIg5DEkuwxqW1LBwnHS2irtWJLl4y5MA==",
   "success": true,
   "projectFilePath": "D:\\Conestoga\\.Net\\JRSystem\\JRSystem\\JRSystem.csproj",
   "expectedPackageFiles": [
@@ -87,9 +87,9 @@
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.0.1\\microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.diasymreader\\1.3.0\\microsoft.diasymreader.1.3.0.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.dotnet.scaffolding.shared\\6.0.15\\microsoft.dotnet.scaffolding.shared.6.0.15.nupkg.sha512",
-    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.7\\microsoft.entityframeworkcore.7.0.7.nupkg.sha512",
-    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.7\\microsoft.entityframeworkcore.abstractions.7.0.7.nupkg.sha512",
-    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.7\\microsoft.entityframeworkcore.analyzers.7.0.7.nupkg.sha512",
+    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.9\\microsoft.entityframeworkcore.7.0.9.nupkg.sha512",
+    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.9\\microsoft.entityframeworkcore.abstractions.7.0.9.nupkg.sha512",
+    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.9\\microsoft.entityframeworkcore.analyzers.7.0.9.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.7\\microsoft.entityframeworkcore.design.7.0.7.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.7\\microsoft.entityframeworkcore.relational.7.0.7.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.7\\microsoft.entityframeworkcore.sqlserver.7.0.7.nupkg.sha512",

@@ -14,5 +14,7 @@ namespace JRSystem.Models
 
         public DbSet<Application> ApplicationSets { get; set; }
 
+        public DbSet<FileOnDatabase> FilesOnDatabase { get; set; }
+
     }
 }
