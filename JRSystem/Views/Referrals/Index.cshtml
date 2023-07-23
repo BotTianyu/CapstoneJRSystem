@@ -65,12 +65,12 @@
 *@
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Find Referrals";
     var referralList = Model.ReferralList as IEnumerable<JRSystem.Models.Referral>;
     var id = Model.Id;
 }
 
-<h1>Referrals</h1>
+<h1>@ViewData["Title"] </h1>
 
 
 <table class="table">
