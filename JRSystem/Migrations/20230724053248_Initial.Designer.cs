@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JRSystem.Migrations
 {
     [DbContext(typeof(ReferralDBContext))]
-    [Migration("20230717231559_Initial")]
+    [Migration("20230724053248_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -57,11 +57,10 @@ namespace JRSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ApplicationId"));
 
-                    b.Property<int>("ApplierId")
+                    b.Property<int?>("ApplierId")
                         .HasColumnType("int");
 
                     b.Property<string>("ReferralId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Summary")
@@ -103,6 +102,9 @@ namespace JRSystem.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

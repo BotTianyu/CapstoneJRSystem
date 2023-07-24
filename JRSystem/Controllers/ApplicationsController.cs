@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JRSystem.Models;
+using Microsoft.AspNetCore.Routing;
 
 namespace JRSystem.Controllers
 {
@@ -62,18 +63,28 @@ namespace JRSystem.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(string id, [Bind("ApplicationId,Summary,ApplierId,ReferralId")] Application application)
+        
+        public async Task<IActionResult> Create(string id, [Bind("ApplicationId,Summary")] Application application)
         {
-            if (ModelState.IsValid)
+            try
             {
-                application.ReferralId = id;
-                application.ApplierId = HttpContext.Session.GetInt32("_AccountID") ?? 0;
-                _context.Add(application);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    application.ReferralId = id;
+                    application.ApplierId = HttpContext.Session.GetInt32("_AccountID") ?? 0;
+                    _context.Add(application);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction("index", "file", new { userId = HttpContext.Session.GetInt32("_AccountID") });
+                }
+                return View(application);
             }
-            return View(application);
+            catch (Exception ex)
+            {
+                // 输出日志，查看是否有异常信息
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
         }
 
         // GET: Applications/Edit/5

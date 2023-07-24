@@ -20,9 +20,9 @@ namespace JRSystem.Controllers
         {
             this._context = _context;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int userId)
         {
-            var fileuploadView = await LoadAllFiles();
+            var fileuploadView = await LoadAllFiles(userId);
             ViewBag.Message = TempData["Message"];
             return View(fileuploadView);
         }
@@ -37,11 +37,12 @@ namespace JRSystem.Controllers
                 var extension = Path.GetExtension(file.FileName);
                 var fileModel = new FileOnDatabase
                 {
-                    CreatedOn = DateTime.UtcNow,
+                    CreatedOn = DateTime.Now,
                     FileType = file.ContentType,
                     Extension = extension,
                     Name = fileName,
-                    Description = description
+                    Description = description,
+                    UserId = HttpContext.Session.GetInt32("_AccountID")
                 };
                 using (var dataStream = new MemoryStream())
                 {
@@ -52,13 +53,14 @@ namespace JRSystem.Controllers
                 _context.SaveChanges();
             }
             TempData["Message"] = "File successfully uploaded to Database";
-            return RedirectToAction("Index");
+            return RedirectToAction("index", new {userId = HttpContext.Session.GetInt32("_AccountID") });
         }
 
-        private async Task<FileUploadView> LoadAllFiles()
+        private async Task<FileUploadView> LoadAllFiles(int id)
         {
             var viewModel = new FileUploadView();
-            viewModel.FilesOnDatabase = await _context.FilesOnDatabase.ToListAsync();
+            
+            viewModel.FilesOnDatabase = await _context.FilesOnDatabase.Where(f => f.UserId == id).ToListAsync();
             
             return viewModel;
         }

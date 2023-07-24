@@ -2,67 +2,6 @@
 @model dynamic
 
 
-@*@{
-    ViewData["Title"] = "Index";
-}
-
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().ReferralName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().AccountID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().ReferralDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().deadline)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Item1.FirstOrDefault().JobTitle)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Item1) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReferralName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AccountID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReferralDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.deadline)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.JobTitle)
-            </td>
-            <td>
-                    @if (item.AccountID == Model.Item2)
-                    {
-                    <a asp-action="Edit" asp-route-id="@item.ReferralId">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.ReferralId">Details</a> 
-                    <a asp-action="Delete" asp-route-id="@item.ReferralId">Delete</a>
-                    }
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
-*@
 
 @{
     ViewData["Title"] = "Index";
@@ -115,13 +54,8 @@
                         @Html.DisplayFor(modelItem => item.JobTitle)
                     </td>
                     <td>
-                        <a asp-controller="Applications" asp-action="Create" asp-route-id="@item.ReferralId">Apply now!</a>
-                        @*@if (item.AccountID == id)
-                {
-                <a asp-action="Edit" asp-route-id="@item.ReferralId">Edit</a>
-                <a asp-action="Details" asp-route-id="@item.ReferralId">Details</a>
-                <a asp-action="Delete" asp-route-id="@item.ReferralId">Delete</a>
-                }*@
+                        <a asp-controller="Applications" asp-action="Create" asp-route-id=@item.ReferralId>Apply now!</a>
+               
                     </td>
                 </tr>
             

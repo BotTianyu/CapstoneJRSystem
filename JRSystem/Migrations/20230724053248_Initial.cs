@@ -33,8 +33,8 @@ namespace JRSystem.Migrations
                     ApplicationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Summary = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ApplierId = table.Column<int>(type: "int", nullable: false),
-                    ReferralId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ApplierId = table.Column<int>(type: "int", nullable: true),
+                    ReferralId = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -48,6 +48,7 @@ namespace JRSystem.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Data = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FileType = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Extension = table.Column<string>(type: "nvarchar(max)", nullable: false),
