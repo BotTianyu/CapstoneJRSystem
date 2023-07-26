@@ -182,7 +182,7 @@ namespace JRSystem.Controllers
                     HttpContext.Session.SetInt32("_Login", 1);
                     HttpContext.Session.SetString("_Uname", loggedInAccount.UserName);
 
-                    return RedirectToAction("Index", "Referrals"/*, new { id = accountId }*/);
+                    return RedirectToAction("AccountInfo", "Accounts"/*, new { id = accountId }*/);
                 }
                 return RedirectToAction("Fail");
             }

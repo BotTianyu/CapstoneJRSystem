@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Fn62iT+o2uXZPj84TPH8DjDi4E15+pXR2ts7axBguDg=",
+  "Hash": "FeNX0d4cyV1oKdkszNBbo9K5l3D7RIqluBM+g7sVi0w=",
   "Source": "JRSystem",
   "BasePath": "_content/JRSystem",
   "Mode": "Default",
@@ -185,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\team.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Alina\\source\\repos\\CapstoneJRSystem_1\\JRSystem\\wwwroot\\image\\teammembers.png",
+      "SourceId": "JRSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Alina\\source\\repos\\CapstoneJRSystem_1\\JRSystem\\wwwroot\\",
+      "BasePath": "_content/JRSystem",
+      "RelativePath": "image/teammembers.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\teammembers.png"
     },
     {
       "Identity": "C:\\Users\\Alina\\source\\repos\\CapstoneJRSystem_1\\JRSystem\\wwwroot\\js\\site.js",

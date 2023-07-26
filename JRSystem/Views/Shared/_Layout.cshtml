@@ -35,7 +35,7 @@
                 <li class="nav-item"><a class="nav-link link-body-emphasis px-2 " asp-controller="Referrals" asp-action="Index">Find</a></li>
                 <li class="nav-item"><a class="nav-link link-body-emphasis px-2 " asp-controller="Referrals" asp-action="Create">Post</a></li>
                 <li class="nav-item"><a class="nav-link link-body-emphasis px-2 " asp-controller="Home" asp-action="About">About</a></li>
-                <li class="nav-item"><a class="nav-link link-body-emphasis px-2 " asp-controller="Accounts" asp-action="Index">Account</a></li>
+                @*<li class="nav-item"><a class="nav-link link-body-emphasis px-2 " asp-controller="Accounts" asp-action="Index">Account</a></li>*@
             </ul>
             <ul class="nav">
                 @if (loginValue==1)
@@ -48,7 +48,7 @@
                 else
                 {
                     <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Accounts" asp-action="Login">Login</a></li>
-                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Home" asp-action="SignIn">Sign up</a></li>
+                    <li class="nav-item"><a class="nav-link link-body-emphasis px-2" asp-controller="Accounts"  asp-action="Create">Sign up</a></li>
                 }
                 
             </ul>
@@ -64,9 +64,13 @@
 
                 
             </a>
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-            </form>
+            <div class="col-12 col-lg-auto mb-3 mb-lg-0 d-flex align-items-center" role="search">
+                <input type="search" class="form-control" placeholder="Search referrals..." aria-label="Search">
+
+                <a href="" class="btn btn-primary" style="margin:5px; transition: background-color 0.3s ease;">
+                    Search
+                </a>
+            </div>
         </div>
     </header>
     

@@ -4,37 +4,40 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 style="display: flex; justify-content: center; align-items: center;">Create an Account</h1>
 
-<h4>Account</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<div class="row" style="display: flex; justify-content: center; align-items: center;">
+    <div class="col-md-4" >
+        <form asp-action="Create" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="UserName" class="control-label"></label>
                 <input asp-for="UserName" class="form-control" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="SetupTime" class="control-label"></label>
+           <div class="form-group">
+                <label asp-for="SetupTime" class="control-label">Sign Up Date</label>
                 <input asp-for="SetupTime" class="form-control" />
                 <span asp-validation-for="SetupTime" class="text-danger"></span>
-            </div>
+           </div>
             <div class="form-group">
                 <label asp-for="Password" class="control-label"></label>
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-top: 10px">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+            @*<div>
+                <a asp-action="Index" style="text-decoration: none; margin-top: 20px">Back to List</a>
+            </div>*@
         </form>
+ 
+
     </div>
+   
+
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

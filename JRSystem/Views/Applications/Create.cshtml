@@ -4,11 +4,11 @@
     ViewData["Title"] = "Apply A Referral";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h1 style="display: flex; justify-content: center; align-items: center;">@ViewData["Title"]</h1>
 
 @*<h4>Application</h4>*@
 <hr />
-<div class="row">
+<div class="row" style="display: flex; justify-content: center; align-items: center;">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -30,11 +30,12 @@
             <div class="form-group" style="margin-top: 20px">
                 <input type="submit" value="Apply" class="btn btn-primary" />
             </div>
+            <div style="margin-top: 10px">
+                <a asp-action="Index">Back to Applications Lists</a>
+            </div>
+
         </form>
     </div>
 </div>
 
-<div style="margin-top: 10px">
-    <a asp-action="Index">Back to Applications Lists</a>
-</div>
 

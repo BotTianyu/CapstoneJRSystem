@@ -1,11 +1,12 @@
 ﻿@using Microsoft.AspNetCore.Http;
 @model dynamic
 
-
-@*@{
-    ViewData["Title"] = "Index";
+@{
+    ViewData["Title"] = "My Account";
 }
 
+
+@*
 <h1>Index</h1>
 
 <p>
@@ -85,7 +86,7 @@
                 @Html.DisplayNameFor(model => referralList.FirstOrDefault().ReferralDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => referralList.FirstOrDefault().deadline)
+                Deadline
             </th>
             <th>
                 @Html.DisplayNameFor(model => referralList.FirstOrDefault().JobTitle)
@@ -115,8 +116,8 @@
                         @Html.DisplayFor(modelItem => item.JobTitle)
                     </td>
                     <td>
-                        <a asp-controller="Applications" asp-action="Create" asp-route-id="@item.ReferralId">Apply now!</a>
-                        @*@if (item.AccountID == id)
+                     @*   <a asp-controller="Applications" asp-action="Create" asp-route-id="@item.ReferralId">Apply now!</a>*@
+                @*@if (item.AccountID == id)
                 {
                 <a asp-action="Edit" asp-route-id="@item.ReferralId">Edit</a>
                 <a asp-action="Details" asp-route-id="@item.ReferralId">Details</a>

@@ -4,10 +4,10 @@
     ViewData["Title"] = "Post Referrals";
 }
 
-<h1>Post your referral today!</h1>
+<h1 style="display: flex; justify-content: center; align-items: center;">Post your referral today!</h1>
 
 <hr />
-<div class="row">
+<div class="row" style="display: flex; justify-content: center; align-items: center;">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -32,7 +32,7 @@
                 <span asp-validation-for="ReferralDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="deadline" class="control-label"></label>
+                <label asp-for="deadline" class="control-label">Deadline</label>
                 <input asp-for="deadline" class="form-control" />
                 <span asp-validation-for="deadline" class="text-danger"></span>
             </div>
@@ -41,14 +41,15 @@
                 <input asp-for="JobTitle" class="form-control" />
                 <span asp-validation-for="JobTitle" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-top: 10px">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+            <div>
+                <a asp-action="Index" style="text-decoration: none; margin-top: 20px">Back to List</a>
+            </div>
+
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

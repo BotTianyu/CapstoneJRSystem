@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\image\\team.jpg"
     },
     {
+      "Id": "C:\\Users\\Alina\\source\\repos\\CapstoneJRSystem_1\\JRSystem\\wwwroot\\image\\teammembers.png",
+      "PackagePath": "staticwebassets\\image\\teammembers.png"
+    },
+    {
       "Id": "C:\\Users\\Alina\\source\\repos\\CapstoneJRSystem_1\\JRSystem\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
