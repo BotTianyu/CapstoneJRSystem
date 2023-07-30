@@ -9,9 +9,9 @@ namespace JRSystem.Models
         public string UserName { get; set; }
         public DateTime? SetupTime { get; set; }
         public string Password { get; set; }
-
-        public const string SessionKeyName = "_AccountID";
-       
+        public string Type { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
 
         private readonly ReferralDBContext _context;
 

@@ -30,12 +30,24 @@ namespace JRSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountId"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("SetupTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -56,6 +68,9 @@ namespace JRSystem.Migrations
 
                     b.Property<int?>("ApplierId")
                         .HasColumnType("int");
+
+                    b.Property<string>("FileId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReferralId")
                         .HasColumnType("nvarchar(max)");
@@ -92,6 +107,9 @@ namespace JRSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("FileId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("FileType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -100,7 +118,10 @@ namespace JRSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<string>("ReferralId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -108,17 +129,57 @@ namespace JRSystem.Migrations
                     b.ToTable("FilesOnDatabase");
                 });
 
+            modelBuilder.Entity("JRSystem.Models.Job", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JobId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Job_description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Job_type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Start_time")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("JobSets");
+                });
+
             modelBuilder.Entity("JRSystem.Models.Referral", b =>
                 {
                     b.Property<string>("ReferralId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("AccountID")
+                    b.Property<int?>("AccountID")
                         .HasColumnType("int");
+
+                    b.Property<string>("JobId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("JobTitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Num_seats")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ReferralDate")
                         .HasColumnType("datetime2");

@@ -15,6 +15,10 @@ namespace JRSystem.Controllers
             _logger = logger;
         }
 
+        //public HomeController()
+        //{
+        //}
+
         public IActionResult Index()
         {
             return View();
@@ -32,7 +36,13 @@ namespace JRSystem.Controllers
             return View();
         }
 
-        
+
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Your application description page.";
+            return View();
+        }
+
 
 
 

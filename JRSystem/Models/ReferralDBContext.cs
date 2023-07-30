@@ -4,6 +4,11 @@ namespace JRSystem.Models
 {
     public class ReferralDBContext : DbContext
     {
+
+        public ReferralDBContext()
+        {
+
+        }
         public ReferralDBContext(DbContextOptions options) : base(options)
         {
 
@@ -13,8 +18,10 @@ namespace JRSystem.Models
         public DbSet<Account> AccountSets { get; set; }
 
         public DbSet<Application> ApplicationSets { get; set; }
+        public DbSet<Job> JobSets { get; set; }
 
         public DbSet<FileOnDatabase> FilesOnDatabase { get; set; }
+
 
     }
 }

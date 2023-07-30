@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JRSystem.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace JRSystem.Controllers
 {
@@ -29,7 +30,7 @@ namespace JRSystem.Controllers
         }
 
         // GET: Referrals/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int id)
         {
 
             if (id == null || _context.ReferralSets == null)
@@ -72,15 +73,17 @@ namespace JRSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReferralId,ReferralName,AccountID,ReferralDate,deadline,JobTitle")] Referral referral)
+        public async Task<IActionResult> Create([Bind("ReferralId,ReferralName,AccountID,ReferralDate,deadline,JobTitle,Num_seats")] Referral referral)
         {
 
             if (ModelState.IsValid)
             {
                 referral.AccountID = HttpContext.Session.GetInt32("_AccountID") ?? 0;
+                referral.JobId = $"{referral.ReferralId}.{referral.JobTitle}";
+                TempData["JobId"] = referral.JobId;
                 _context.Add(referral);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Create","Jobs");
             }
             return View(referral);
         }
@@ -107,7 +110,7 @@ namespace JRSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("ReferralId,ReferralName,AccountID,ReferralDate,deadline,JobTitle")] Referral referral)
+        public async Task<IActionResult> Edit(int id, [Bind("ReferralId,ReferralName,AccountID,ReferralDate,deadline,JobTitle")] Referral referral)
         {
 
             if (id != referral.ReferralId)
@@ -139,7 +142,7 @@ namespace JRSystem.Controllers
         }
 
         // GET: Referrals/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int id)
         {
 
             if (id == null || _context.ReferralSets == null)
@@ -177,7 +180,7 @@ namespace JRSystem.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ReferralExists(string id)
+        private bool ReferralExists(int id)
         {
 
             return (_context.ReferralSets?.Any(e => e.ReferralId == id)).GetValueOrDefault();

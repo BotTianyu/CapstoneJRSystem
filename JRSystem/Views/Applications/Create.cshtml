@@ -1,42 +1,31 @@
 ﻿@model JRSystem.Models.Application
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Apply A Referral";
 }
 
-<h1>Create</h1>
+<h1 >@ViewData["Title"]</h1>
+<h4>Anything you want to tell the Referrer</h4>
 
-<h4>Application</h4>
+
+
 <hr />
-<div class="row">
+<div class="row" style="display: flex; justify-content: center; align-items: center;">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Summary" class="control-label"></label>
-                <input asp-for="Summary" class="form-control" />
+                <input asp-for="Summary" type="textarea" class="form-control" />
                 <span asp-validation-for="Summary" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
-                <label asp-for="ApplierId" class="control-label"></label>
-                <input asp-for="ApplierId" class="form-control" />
-                <span asp-validation-for="ApplierId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReferralId" class="control-label"></label>
-                <input asp-for="ReferralId" class="form-control" />
-                <span asp-validation-for="ReferralId" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
+            <div class="form-group" style="margin-top: 20px">
                 <input type="submit" value="Next step: upload files" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 
 

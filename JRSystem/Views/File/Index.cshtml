@@ -3,8 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-<h4>Start Uploading Files Here</h4>
+<h1>Start Uploading Files Here</h1>
 <hr />
 @if (ViewBag.Message != null)
 {
@@ -15,20 +14,20 @@
 <form method="post" enctype="multipart/form-data">
     <input type="file" name="files" multiple required />
     <input type="text" autocomplete="off" placeholder="Enter File Description" name="description" required />
-    <button class="btn btn-success" type="submit" asp-controller="File" asp-action="UploadToDatabase">Upload to Database</button>
+    <button class="btn btn-success" type="submit" asp-controller="File" asp-action="UploadToDatabase">Upload</button>
 </form>
 <hr />
 
 
 <hr />
-<h4>Files on Database</h4>
+<h4>Files uploaded</h4>
 @if (Model.FilesOnDatabase.Count == 0)
 {
     <caption>No Records Found</caption>
 }
 else
 {
-    <caption>List of Files on Database</caption>
+    <caption>List of Files</caption>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -58,5 +57,6 @@ else
 
         </tbody>
     </table>
+    <a type="button" class="btn btn-primary" asp-controller="File" asp-action="done" >Done Appling! </a>
 }
 

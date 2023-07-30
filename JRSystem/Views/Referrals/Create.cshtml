@@ -1,31 +1,20 @@
 ﻿@model JRSystem.Models.Referral
 
-@{
-    ViewData["Title"] = "Create";
-}
+
 
 <h1>Post your referral today!</h1>
 
 <hr />
-<div class="row">
+<div class="row" style="display: flex; justify-content: center; align-items: center;">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="ReferralId" class="control-label"></label>
-                <input asp-for="ReferralId" class="form-control" />
-                <span asp-validation-for="ReferralId" class="text-danger"></span>
-            </div>
+            
             <div class="form-group">
                 <label asp-for="ReferralName" class="control-label"></label>
                 <input asp-for="ReferralName" class="form-control" />
                 <span asp-validation-for="ReferralName" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
-                <label asp-for="AccountID" class="control-label"></label>
-                <input asp-for="AccountID" class="form-control" />
-                <span asp-validation-for="AccountID" class="text-danger"></span>
-            </div>*@
             <div class="form-group">
                 <label asp-for="ReferralDate" class="control-label"></label>
                 <input asp-for="ReferralDate" class="form-control" />
@@ -42,13 +31,16 @@
                 <span asp-validation-for="JobTitle" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="Num_seats" class="control-label"></label>
+                <input asp-for="Num_seats" class="form-control" />
+                <span asp-validation-for="Num_seats" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group" style="margin-top:10px">
+                <input type="submit" value="Enter more Job Details" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 

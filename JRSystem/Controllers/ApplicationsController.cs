@@ -72,9 +72,13 @@ namespace JRSystem.Controllers
                 {
                     application.ReferralId = id;
                     application.ApplierId = HttpContext.Session.GetInt32("_AccountID") ?? 0;
+                    application.FileId = $"{application.ReferralId}.{application.ApplierId}";
+                    TempData["ReferralId"] = application.ReferralId;
+                    TempData["FileId"] = application.FileId;
+
                     _context.Add(application);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction("index", "file", new { userId = HttpContext.Session.GetInt32("_AccountID") });
+                    return RedirectToAction("index", "file", new { FileId = application.FileId });
                 }
                 return View(application);
             }
@@ -86,6 +90,8 @@ namespace JRSystem.Controllers
             }
 
         }
+
+       
 
         // GET: Applications/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -175,6 +181,15 @@ namespace JRSystem.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        public async Task<IActionResult> ViewApplications(string id)
+        {
+            var applications = await _context.ApplicationSets
+        .Where(a => a.ReferralId == id)
+        .ToListAsync();
+
+            return View(applications);
+        }
         private bool ApplicationExists(int id)
         {
           return (_context.ApplicationSets?.Any(e => e.ApplicationId == id)).GetValueOrDefault();

@@ -10,5 +10,7 @@ namespace JRSystem.Models
         public string Summary { get; set; }
         public int? ApplierId { get; set; }
         public string? ReferralId { get; set; }
+        public string? FileId { get; set; }
+
     }
 }

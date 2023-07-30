@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using JRSystem.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using System.Drawing.Drawing2D;
 
 namespace JRSystem.Controllers
 {
@@ -20,14 +22,24 @@ namespace JRSystem.Controllers
         {
             this._context = _context;
         }
-        public async Task<IActionResult> Index(int userId)
+        public async Task<IActionResult> Index(string FileId)
         {
-            var fileuploadView = await LoadAllFiles(userId);
+            
+            var fileuploadView = await LoadAllFiles(FileId);
             ViewBag.Message = TempData["Message"];
+            TempData["FileId"] = FileId;
             return View(fileuploadView);
         }
-        
-        
+
+        public async Task<IActionResult> ShowFiles(string FileId)
+        {
+
+            var fileuploadViewResult = await LoadAllFiles(FileId);
+            ViewBag.Message = TempData["Message"];
+            TempData["FileId"] = FileId;
+            return View(fileuploadViewResult);
+        }
+
         [HttpPost]
         public async Task<IActionResult> UploadToDatabase(List<IFormFile> files, string description)
         {
@@ -42,7 +54,9 @@ namespace JRSystem.Controllers
                     Extension = extension,
                     Name = fileName,
                     Description = description,
-                    UserId = HttpContext.Session.GetInt32("_AccountID")
+                    ReferralId = TempData["ReferralId"] as string,
+                    UserId = HttpContext.Session.GetInt32("_AccountID"),
+                    FileId = TempData["FileId"] as string
                 };
                 using (var dataStream = new MemoryStream())
                 {
@@ -50,17 +64,19 @@ namespace JRSystem.Controllers
                     fileModel.Data = dataStream.ToArray();
                 }
                 _context.FilesOnDatabase.Add(fileModel);
+                TempData["ReferralId"] = fileModel.ReferralId;
+                TempData["FileId"] = fileModel.FileId;
                 _context.SaveChanges();
             }
             TempData["Message"] = "File successfully uploaded to Database";
-            return RedirectToAction("index", new {userId = HttpContext.Session.GetInt32("_AccountID") });
+            return RedirectToAction("index", new {FileId = TempData["FileId"] });
         }
 
-        private async Task<FileUploadView> LoadAllFiles(int id)
+        private async Task<FileUploadView> LoadAllFiles(string FileId)
         {
             var viewModel = new FileUploadView();
             
-            viewModel.FilesOnDatabase = await _context.FilesOnDatabase.Where(f => f.UserId == id).ToListAsync();
+            viewModel.FilesOnDatabase = await _context.FilesOnDatabase.Where(f => f.FileId == FileId).ToListAsync();
             
             return viewModel;
         }
@@ -73,7 +89,10 @@ namespace JRSystem.Controllers
             return File(file.Data, file.FileType, file.Name + file.Extension);
         }
         
-        
+        public async Task<IActionResult> done()
+        {
+            return View();
+        }
         public async Task<IActionResult> DeleteFileFromDatabase(int id)
         {
 
@@ -81,7 +100,9 @@ namespace JRSystem.Controllers
             _context.FilesOnDatabase.Remove(file);
             _context.SaveChanges();
             TempData["Message"] = $"Removed {file.Name + file.Extension} successfully from Database.";
-            return RedirectToAction("Index");
+            return RedirectToAction("Index",new {FileId = file.FileId});
         }
+
+
     }
 }

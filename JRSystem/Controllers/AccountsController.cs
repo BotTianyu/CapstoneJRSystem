@@ -55,15 +55,21 @@ namespace JRSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AccountId,UserName,SetupTime,Password")] Account account)
+        public async Task<IActionResult> Create([Bind("AccountId,UserName,Password,Type,Email,Phone")] Account account)
         {
             if (ModelState.IsValid)
             {
+                account.SetupTime = DateTime.Now;
                 _context.Add(account);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Success");
             }
             return View(account);
+        }
+
+        public async Task<IActionResult> Success()
+        {
+            return View();
         }
 
         // GET: Accounts/Edit/5
@@ -87,7 +93,7 @@ namespace JRSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AccountId,UserName,SetupTime,Password")] Account account)
+        public async Task<IActionResult> Edit(int id, [Bind("AccountId,UserName,SetupTime,Password,Type,Email,Phone")] Account account)
         {
             if (id != account.AccountId)
             {

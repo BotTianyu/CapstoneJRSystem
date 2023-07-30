@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Details";
+   
 }
 
 <h1>Details</h1>
@@ -17,20 +18,27 @@
             @Html.DisplayFor(model => model.UserName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SetupTime)
+            @Html.DisplayNameFor(model => model.Type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SetupTime)
+            @Html.DisplayFor(model => model.Type)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Password)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Password)
+            @Html.DisplayFor(model => model.Email)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+    
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.AccountId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    @*<a asp-action="Edit" asp-route-id="@Model?.AccountId">Edit</a> |*@
+    @*<a class="btn btn-primary" asp-controller="Applications" asp-action="ViewApplications" asp-route-id= referralId class="btn btn-primary">Check Applications</a>*@
 </div>

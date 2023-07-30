@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IPV5mUkOq3KMeDBU1H0NeejCNtF+zaSKUFRMLWTndUHQsq7EPnb9xmsIg5DEkuwxqW1LBwnHS2irtWJLl4y5MA==",
+  "dgSpecHash": "+9LDWY3eLuP11uEfsQU/D1wMzZaCE5U6bCJT0kbRXzDvd9ZuyYyRA8xhMFkYaNWdJnlHwT8D3gIX9bmQtH8i+Q==",
   "success": true,
   "projectFilePath": "D:\\Conestoga\\.Net\\JRSystem\\JRSystem\\JRSystem.csproj",
   "expectedPackageFiles": [
@@ -90,10 +90,10 @@
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.9\\microsoft.entityframeworkcore.7.0.9.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.9\\microsoft.entityframeworkcore.abstractions.7.0.9.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.9\\microsoft.entityframeworkcore.analyzers.7.0.9.nupkg.sha512",
-    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.7\\microsoft.entityframeworkcore.design.7.0.7.nupkg.sha512",
-    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.7\\microsoft.entityframeworkcore.relational.7.0.7.nupkg.sha512",
-    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.7\\microsoft.entityframeworkcore.sqlserver.7.0.7.nupkg.sha512",
-    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.7\\microsoft.entityframeworkcore.tools.7.0.7.nupkg.sha512",
+    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.9\\microsoft.entityframeworkcore.design.7.0.9.nupkg.sha512",
+    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.9\\microsoft.entityframeworkcore.relational.7.0.9.nupkg.sha512",
+    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.9\\microsoft.entityframeworkcore.sqlserver.7.0.9.nupkg.sha512",
+    "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.9\\microsoft.entityframeworkcore.tools.7.0.9.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\TianyuDai\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
